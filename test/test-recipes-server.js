@@ -111,8 +111,8 @@ describe('Recipes List', function() {
     return chai.request(app)
       .post('/recipes')
       .send(badItem)
-      .then(function(res){
-        res.should.have.status(400);
+      .catch(function(err){
+        err.should.have.status(400)
       })
   });
 });
